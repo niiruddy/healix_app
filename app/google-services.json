@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1016137388487",
+    "project_id": "app-healix",
+    "storage_bucket": "app-healix.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016137388487:android:aaafe0138a3cca88f809e2",
+        "android_client_info": {
+          "package_name": "com.example.app_healix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016137388487-lsodm3lbi3n68hifpmtme60ugb2f7cps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn7J3LPjhO45oQRJKAdJ2aYxzTf2GTUEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016137388487-lsodm3lbi3n68hifpmtme60ugb2f7cps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

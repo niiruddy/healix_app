@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Healix</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="submit">Submit</string>
+    <string name="register">REGISTER</string>
+    <string name="already_signed_up">Already Signed Up?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="no_account">No account?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="first_name">First Name</string>
+    <string name="Last_name">Last Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="professional_nurse">Professional Nurse</string>
+    <string name="elderly_patient">Elderly Patient</string>
+
+
+</resources>
