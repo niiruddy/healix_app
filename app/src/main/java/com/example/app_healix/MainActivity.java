@@ -17,7 +17,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -65,7 +64,10 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+
                             checkUserAccessLevel(task.getResult().getUser().getUid());
+                            Intent intent = new Intent(getApplicationContext(), dashboard.class);
+                            startActivity(intent);
                         }
                         else {
                             String error = task.getException().getMessage();
@@ -91,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("TAG", "onSuccess: "+documentSnapshot.getData());
 
                 if(documentSnapshot.getString("isNurse")!=null){
-                    Intent log= new Intent(MainActivity.this, HomeActivity.class);
+                    Intent log= new Intent(MainActivity.this, dashboard.class);
                     startActivity(log);
                     finish();
                 }

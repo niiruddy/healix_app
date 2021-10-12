@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipToPadding="false"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".SignUp">
+    tools:context=".SignUp"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/signupToolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="50dp"
-        android:background="#64FFDA"
         app:title="Sign Up"
+        app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+        style="@style/Toolbar"
+
         />
+
+
+    <!--ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginVertical="56"-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
     <LinearLayout
@@ -23,57 +39,9 @@
         android:gravity="center"
         android:layout_gravity="center"
         >
+        
 
 
-        <EditText
-
-            android:id="@+id/Fname"
-            android:layout_width="311dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:hint="@string/first_name"
-            android:inputType="textCapCharacters"
-            android:autofillHints="no"
-            android:background="@drawable/input_big"
-            android:padding="10dp"
-            android:elevation="50dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            />
-        <EditText
-
-            android:id="@+id/Lname"
-            android:layout_width="311dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-
-            android:hint="@string/Last_name"
-            android:inputType="textCapCharacters"
-            android:autofillHints="no"
-            android:background="@drawable/input_big"
-            android:padding="10dp"
-            android:elevation="50dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            />
-
-        <EditText
-
-            android:id="@+id/pNum"
-            android:layout_width="311dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:hint="@string/phone_number"
-            android:inputType="phone"
-            android:maxLength="10"
-            android:autofillHints="no"
-            android:background="@drawable/input_big"
-            android:padding="10dp"
-            android:elevation="50dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            />
 
         <EditText
 
@@ -88,6 +56,8 @@
             android:elevation="50dp"
             android:layout_gravity="center"
             android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
             />
 
 
@@ -118,6 +88,7 @@
             android:gravity="center"
             android:hint="@string/confirm_password"
             android:inputType="textPassword"
+            android:layout_marginTop="10dp"
             android:padding="10dp" />
 
         <RadioButton
@@ -125,7 +96,6 @@
             android:layout_width="311dp"
             android:layout_height="50dp"
             android:layout_marginBottom="10dp"
-
             android:background="@drawable/btn_bg"
             android:text="@string/professional_nurse"
             android:textColor="#ffffff"/>
@@ -137,18 +107,35 @@
             android:text="@string/elderly_patient"
             android:textColor="#ffffff"/>
 
+<LinearLayout
 
-        <Button
-            android:id="@+id/signupButton"
-            android:layout_width="311dp"
-            android:layout_height="wrap_content"
-            android:text="@string/register"
-            android:background="@drawable/btn_bg"
-            android:textColor="#FFFFFF"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="10dp"
-            />
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="310dp"
+        android:layout_marginTop="14dp"
+        android:text="next"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+
+        />
+    <Button
+        android:id="@+id/next"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_next"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        />
+
+
+</LinearLayout>
 
 
         <LinearLayout
@@ -181,7 +168,8 @@
         </LinearLayout>
 
     </LinearLayout>
-
+        </LinearLayout>
+<!--/ScrollView-->
 
 
 
@@ -196,4 +184,4 @@
 
 
 
-</RelativeLayout>
+</LinearLayout>

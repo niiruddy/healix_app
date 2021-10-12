@@ -2,11 +2,14 @@ package com.example.app_healix;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -23,17 +26,22 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+
+
 import java.util.HashMap;
 import java.util.Map;
 
 
 public class SignUp extends AppCompatActivity {
 
-    private EditText fname,lname,phone,email, pass, conPass;
+    private EditText email, pass, conPass;
     private ProgressBar progressBar;
+
     FirebaseAuth mAuth;
     FirebaseFirestore fStore;
+
     TextView SignIn;
+    Button next;
 
 
     @Override
@@ -43,10 +51,7 @@ public class SignUp extends AppCompatActivity {
 
         mAuth=FirebaseAuth.getInstance();
         fStore=FirebaseFirestore.getInstance();
-        fname=findViewById(R.id.Fname);
-        lname=findViewById(R.id.Lname);
-        phone=findViewById(R.id.pNum);
-        Button submit=findViewById(R.id.signupButton);
+        next =findViewById(R.id.next);
         email=findViewById(R.id.signupEmail);
         pass=findViewById(R.id.signupPassword);
         conPass=findViewById(R.id.signupConfirmPassword);
@@ -54,6 +59,19 @@ public class SignUp extends AppCompatActivity {
         SignIn=findViewById(R.id.signinPage);
         RadioButton Nurse = findViewById(R.id.nurse);
         RadioButton Patient = findViewById(R.id.patient);
+
+
+        Toolbar toolbar = findViewById(R.id.signupToolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //onBackPressed();
+                Intent intent=new Intent(SignUp.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
 Nurse.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
     @Override
@@ -86,27 +104,15 @@ Patient.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() 
 
 
 
-        submit.setOnClickListener(view -> {
+        next.setOnClickListener(view -> {
             String Email=email.getText().toString();
             String Pass=pass.getText().toString();
             String ConPass=conPass.getText().toString();
-            String fName=fname.getText().toString();
-            String lName=lname.getText().toString();
-            String Phone =phone.getText().toString();
+            String usertype = "0";
 
             if(!(Nurse.isChecked()||Patient.isChecked())){
                 Toast.makeText(this, "Select User Type", Toast.LENGTH_SHORT).show();
                 return;
-            }
-
-            if(TextUtils.isEmpty(fName)){
-                Toast.makeText(this, "Enter your first name", Toast.LENGTH_SHORT).show();
-            }
-            else if(TextUtils.isEmpty(lName)){
-                Toast.makeText(this, "Enter your last name", Toast.LENGTH_SHORT).show();
-            }
-            else if(TextUtils.isEmpty(Phone)){
-                Toast.makeText(this, "Enter your phone number", Toast.LENGTH_SHORT).show();
             }
             else if(TextUtils.isEmpty(Email)){
                 Toast.makeText(this, "Enter your email address", Toast.LENGTH_SHORT).show();
@@ -114,43 +120,25 @@ Patient.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() 
                 Toast.makeText(this, "Enter your password", Toast.LENGTH_SHORT).show();
             }else if(!Pass.equals(ConPass)){
                 Toast.makeText(this, "Both passwords do not match", Toast.LENGTH_SHORT).show();
-            }else{
-               progressBar.setVisibility(View.VISIBLE);
-               mAuth.createUserWithEmailAndPassword(Email,Pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                   @Override
-                   public void onComplete(@NonNull Task<AuthResult> task) {
-                       if (task.isSuccessful()){
-                           progressBar.setVisibility(View.GONE);
-                           FirebaseUser user=mAuth.getCurrentUser();
-
-                           DocumentReference df = fStore.collection("Users").document(user.getUid());
-                           Map<String,Object> userInfo=new HashMap<>();
-                           userInfo.put("FirstName",fname.getText().toString());
-                           userInfo.put("LastName", lname.getText().toString());
-                           userInfo.put("Email",email.getText().toString());
-                           userInfo.put("PhoneNumber",phone.getText().toString());
-
-                           if(Nurse.isChecked()){
-                               userInfo.put("isNurse","1");
-                           }
-                           if(Patient.isChecked()){
-                               userInfo.put("isPatient", "0");
-                           }
-
-                           df.set(userInfo);
-                           startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                           finish();
-                           Toast.makeText(SignUp.this, "Registration Complete", Toast.LENGTH_SHORT).show();
-                       }
-                       else{
-                           progressBar.setVisibility(View.GONE);
-                           String error=task.getException().getMessage();
-                           Toast.makeText(SignUp.this,error, Toast.LENGTH_SHORT).show();
-                       }
-
-                   }
-               });
+            }else if (Nurse.isChecked()){
+                Intent intent = new Intent(getApplicationContext(),Nurse_Dashboard.class);
+                intent.putExtra("email", Email);
+                intent.putExtra("pass", Pass);
+                intent.putExtra("conPass", ConPass);
+                startActivity(intent);
+                finish();
+            }else if(Patient.isChecked()){
+                Intent intent = new Intent(getApplicationContext(),Patient_Dashboard.class);
+                intent.putExtra("email", Email);
+                intent.putExtra("pass", Pass);
+                intent.putExtra("conPass", ConPass);
+                startActivity(intent);
+                finish();
             }
+
+
         });
     }
+
+
 }

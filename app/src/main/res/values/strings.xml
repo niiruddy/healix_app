@@ -10,11 +10,28 @@
     <string name="no_account">No account?</string>
     <string name="sign_up">Sign Up</string>
     <string name="sign_out">Sign Out</string>
-    <string name="first_name">First Name</string>
     <string name="Last_name">Last Name</string>
     <string name="phone_number">Phone Number</string>
     <string name="professional_nurse">Professional Nurse</string>
     <string name="elderly_patient">Elderly Patient</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="last_name">Last Name</string>
+    <string name="first_name">First Name</string>
+    <string name="First_name">First Name</string>
+    <string name="role">Role</string>
+    <string name="specialized_areas">Specialized Areas</string>
+    <string name="end_of_life_care">End of Life Care</string>
+    <string name="palliative_care">Palliative Care</string>
+    <string name="dementia_care">Dementia Care</string>
+    <string name="parkinson_s_care">Parkinson\'s Care</string>
+    <string name="cancer_care">Cancer Care</string>
+    <string name="stroke_care">Stroke Care</string>
+    <string name="post_surgery_care">Post Surgery Care</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="your_name">Your Name</string>
+    <string name="your_name1">Your Name</string>
 
 
 </resources>
