@@ -198,7 +198,7 @@ public class Nurse_Dashboard extends AppCompatActivity {
                     });
 
                     Nurse_register_helper helper = new Nurse_register_helper(email,pass,FName,DOB,Phone,Role);
-                    ref.child(String.valueOf(sendid)).setValue(helper);
+                    ref.child(String.valueOf(sendid + 1)).setValue(helper);
 
                     Intent intent = new Intent(getApplicationContext(),dashboard.class);
 

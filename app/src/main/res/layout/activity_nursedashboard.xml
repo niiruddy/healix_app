@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/body_container"
-    android:background="@color/card_1"
+
     tools:context=".dashboard"
     android:orientation="vertical"
     >
@@ -32,162 +32,166 @@
         android:layout_weight="1"/>
 
 
-  <RelativeLayout
-      android:layout_width="match_parent"
-      android:layout_height="150dp"
-      android:padding="20dp"
-      android:id="@+id/whiteplace"
-      android:background="@color/white">
+<!--  <RelativeLayout-->
+<!--      android:layout_width="match_parent"-->
+<!--      android:layout_height="150dp"-->
+<!--      android:padding="20dp"-->
+<!--      android:id="@+id/whiteplace"-->
+<!--      android:background="@color/white">-->
 
-    <ImageView
-        android:id="@+id/profile_view"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/ic_portrait"
-        android:layout_centerVertical="true"/>
+<!--    <ImageView-->
+<!--        android:id="@+id/profile_view"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/ic_portrait"-->
+<!--        android:layout_centerVertical="true"/>-->
 
-    <TextView
-        android:id="@+id/headName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@id/profile_view"
-        android:fontFamily="@font/montserrat_bold"
-        android:includeFontPadding="false"
-        android:text="@string/your_name"
-        android:textColor="#000"
-        android:textSize="20sp" />
-
-
-  </RelativeLayout>
-
-  <ScrollView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:padding="20dp"
-        android:orientation="vertical">
+<!--    <TextView-->
+<!--        android:id="@+id/headName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerVertical="true"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_toRightOf="@id/profile_view"-->
+<!--        android:fontFamily="@font/montserrat_bold"-->
+<!--        android:includeFontPadding="false"-->
+<!--        android:text="@string/your_name"-->
+<!--        android:textColor="#000"-->
+<!--        android:textSize="20sp" />-->
 
 
+<!--  </RelativeLayout>-->
 
-      <com.google.android.material.textfield.TextInputLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="First Name"
-          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-          android:layout_marginTop="20dp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          android:layout_marginBottom="10dp">
+<!--  <ScrollView-->
+<!--      android:layout_width="match_parent"-->
+<!--      android:layout_height="match_parent">-->
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:id="@+id/Name"
-            android:drawableLeft="@drawable/ic_username_small"
-            android:drawablePadding="10dp"
-
-            android:layout_height="wrap_content"/>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="150dp"-->
+<!--        android:orientation="vertical"-->
+<!--        android:padding="20dp">-->
 
 
-      </com.google.android.material.textfield.TextInputLayout>
+<!--      <com.google.android.material.textfield.TextInputLayout-->
+<!--          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:layout_marginTop="20dp"-->
+<!--          android:layout_marginBottom="10dp"-->
+<!--          android:hint="First Name"-->
+<!--          app:layout_constraintEnd_toEndOf="parent"-->
+<!--          app:layout_constraintStart_toStartOf="parent">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/Name"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawableLeft="@drawable/ic_username_small"-->
+
+<!--            android:drawablePadding="10dp" />-->
 
 
-      <com.google.android.material.textfield.TextInputLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="@string/date_of_birth"
-          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-          android:layout_marginTop="20dp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          android:layout_marginBottom="10dp">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:drawableLeft="@drawable/ic_dob"
-            android:drawablePadding="10dp"
-            android:id="@+id/Dob"
-
-            android:layout_height="wrap_content"/>
+<!--      </com.google.android.material.textfield.TextInputLayout>-->
 
 
-      </com.google.android.material.textfield.TextInputLayout>
-      <com.google.android.material.textfield.TextInputLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="Phone Number"
-          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-          android:layout_marginTop="20dp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
+<!--      <com.google.android.material.textfield.TextInputLayout-->
+<!--          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:layout_marginTop="20dp"-->
+<!--          android:layout_marginBottom="10dp"-->
+<!--          android:hint="@string/date_of_birth"-->
+<!--          app:layout_constraintEnd_toEndOf="parent"-->
+<!--          app:layout_constraintStart_toStartOf="parent">-->
 
-          android:layout_marginBottom="10dp">
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/Dob"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawableLeft="@drawable/ic_dob"-->
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:drawableLeft="@drawable/ic_call"
-            android:inputType="number"
-            android:id="@+id/Phone"
-            android:editable="false"
-            android:drawablePadding="10dp"
-            android:layout_height="wrap_content"/>
+<!--            android:drawablePadding="10dp" />-->
 
 
-      </com.google.android.material.textfield.TextInputLayout>
-      <com.google.android.material.textfield.TextInputLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:hint="Role"
-          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-          android:layout_marginTop="20dp"
-          app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintStart_toStartOf="parent"
-          android:layout_marginBottom="10dp">
+<!--      </com.google.android.material.textfield.TextInputLayout>-->
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:drawableLeft="@drawable/ic_role"
-            android:drawablePadding="10dp"
-            android:id="@+id/Role"
+<!--      <com.google.android.material.textfield.TextInputLayout-->
+<!--          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:layout_marginTop="20dp"-->
+<!--          android:layout_marginBottom="10dp"-->
+<!--          android:hint="Phone Number"-->
+<!--          app:layout_constraintEnd_toEndOf="parent"-->
 
-            android:layout_height="wrap_content"/>
+<!--          app:layout_constraintStart_toStartOf="parent">-->
 
-
-      </com.google.android.material.textfield.TextInputLayout>
-      <com.google.android.material.button.MaterialButton
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="Update"
-          android:id="@+id/updbutt"
-          android:onClick="onclick"
-          android:background="@drawable/btn_bg">
-
-      </com.google.android.material.button.MaterialButton>
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/Phone"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawableLeft="@drawable/ic_call"-->
+<!--            android:drawablePadding="10dp"-->
+<!--            android:editable="false"-->
+<!--            android:inputType="number" />-->
 
 
-    </LinearLayout>
-  </ScrollView>
+<!--      </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--      <com.google.android.material.textfield.TextInputLayout-->
+<!--          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:layout_marginTop="20dp"-->
+<!--          android:layout_marginBottom="10dp"-->
+<!--          android:hint="Role"-->
+<!--          app:layout_constraintEnd_toEndOf="parent"-->
+<!--          app:layout_constraintStart_toStartOf="parent">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/Role"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawableLeft="@drawable/ic_role"-->
+
+<!--            android:drawablePadding="10dp" />-->
+
+
+<!--      </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--      <com.google.android.material.button.MaterialButton-->
+<!--          android:id="@+id/updbutt"-->
+<!--          android:layout_width="match_parent"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:background="@drawable/btn_bg"-->
+<!--          android:onClick="onclick"-->
+<!--          android:text="Update">-->
+
+<!--      </com.google.android.material.button.MaterialButton>-->
+
+
+<!--    </LinearLayout>-->
+<!--  </ScrollView>-->
 
 
   <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="30dp"
-        android:elevation="2dp"
-        app:menu="@menu/item_menu"
-        android:background="@drawable/round_corner"
-        app:itemRippleColor="@android:color/transparent"
-        app:itemIconSize="30dp"
-        app:labelVisibilityMode="unlabeled"
-        app:itemIconTint="@drawable/item_selector"
-        android:id="@+id/bottom_nav"
-        />
+      android:id="@+id/bottom_nav"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true"
+      android:layout_marginStart="30dp"
+      android:layout_marginTop="30dp"
+      android:layout_marginEnd="30dp"
+      android:layout_marginBottom="30dp"
+      android:background="@drawable/round_corner"
+      android:elevation="2dp"
+      app:itemIconSize="30dp"
+      app:itemIconTint="@drawable/item_selector"
+      app:itemRippleColor="@android:color/transparent"
+      app:labelVisibilityMode="unlabeled"
+      app:menu="@menu/item_menu" />
 
 
 </RelativeLayout>

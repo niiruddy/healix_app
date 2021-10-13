@@ -10,6 +10,9 @@ public class Nurse_register_helper {
 //    String Specialty;
 
 
+    public Nurse_register_helper() {
+    }
+
     public Nurse_register_helper(String email, String pass, String name, String DOB, String phone, String role) {
         Email = email;
         Pass = pass;
