@@ -129,9 +129,10 @@
 
       </com.google.android.material.textfield.TextInputLayout>
     <com.google.android.material.button.MaterialButton
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Update"
+        android:text="Edit Profile"
+        android:layout_marginLeft="230dp"
         android:id="@+id/upbutt"
         android:background="@drawable/btn_bg">
 

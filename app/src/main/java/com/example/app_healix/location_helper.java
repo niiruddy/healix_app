@@ -1,10 +1,10 @@
 package com.example.app_healix;
 
-public class location {
+public class location_helper {
     public String Longitude;
     public String Latitude;
 
-    public location(String longitude, String latitude) {
+    public location_helper(String longitude, String latitude) {
         Longitude = longitude;
         Latitude = latitude;
     }

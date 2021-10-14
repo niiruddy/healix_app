@@ -1,6 +1,5 @@
 package com.example.app_healix;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -18,18 +17,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-
-
-import java.util.HashMap;
-import java.util.Map;
 
 
 public class SignUp extends AppCompatActivity {
@@ -121,7 +110,7 @@ Patient.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() 
             }else if(!Pass.equals(ConPass)){
                 Toast.makeText(this, "Both passwords do not match", Toast.LENGTH_SHORT).show();
             }else if (Nurse.isChecked()){
-                Intent intent = new Intent(getApplicationContext(),Nurse_Dashboard.class);
+                Intent intent = new Intent(getApplicationContext(), Nurse_signup_form.class);
                 intent.putExtra("email", Email);
                 intent.putExtra("pass", Pass);
                 intent.putExtra("conPass", ConPass);

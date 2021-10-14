@@ -1,5 +1,12 @@
 package com.example.app_healix;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+
+import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
+
 public class Nurse_register_helper {
     String Email;
     String Pass;
@@ -20,6 +27,10 @@ public class Nurse_register_helper {
         this.DOB = DOB;
         Phone = phone;
         Role = role;
+    }
+
+    public Nurse_register_helper(String new_name, String new_phone) {
+
     }
 
     public String getEmail() {
@@ -69,4 +80,5 @@ public class Nurse_register_helper {
     public void setRole(String role) {
         Role = role;
     }
+
 }

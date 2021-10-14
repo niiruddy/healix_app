@@ -4,7 +4,7 @@ import android.widget.AutoCompleteTextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-public class UserProfile {
+public class patient_register_helper {
 
 
         private String Name;
@@ -12,7 +12,7 @@ public class UserProfile {
         private String Dob;
         private String Role;
 
-        public UserProfile(TextInputEditText name, TextInputEditText phone, TextInputEditText dob, AutoCompleteTextView role) {
+        public patient_register_helper(TextInputEditText name, TextInputEditText phone, TextInputEditText dob, AutoCompleteTextView role) {
                 TextInputEditText Name = name;
                 TextInputEditText Phone = phone;
                 TextInputEditText Dob = dob;

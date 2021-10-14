@@ -6,12 +6,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -26,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Map;
 import java.util.jar.Attributes;
 
 
@@ -40,6 +43,8 @@ public class ProfileFragment extends Fragment {
     LocationCallback callback;
     FusedLocationProviderClient client;
     private Nurse_register_helper helper;
+
+
     String ID;
 
 
@@ -61,7 +66,7 @@ public class ProfileFragment extends Fragment {
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
         assert currentUser != null;
         ID = currentUser.getEmail();
-        Log.d("onchange", "UserID: " + ID);
+
 
     }
 
@@ -77,8 +82,11 @@ public class ProfileFragment extends Fragment {
         headName = view.findViewById(R.id.headName);
 
 
-        reference = FirebaseDatabase.getInstance().getReference();
-        Query query = FirebaseDatabase.getInstance().getReference().child("Nurses").child("Profile_details").orderByChild("email").equalTo(ID);
+
+
+
+        Query query = FirebaseDatabase.getInstance().getReference().child("Nurses")
+                .child("Profile_details").orderByChild("email").equalTo(ID);
 
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -102,6 +110,45 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+
+        updbutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                Query query = FirebaseDatabase.getInstance().getReference().child("Nurses")
+                        .child("Profile_details").orderByChild("email").equalTo(ID);
+
+
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        for (DataSnapshot ds : snapshot.getChildren()) {
+                            helper = ds.getValue(Nurse_register_helper.class);
+
+                        }
+
+                        String new_name = name.getText().toString();
+                        String new_phone = phone.getText().toString();
+
+
+
+
+
+                        }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+
+
+
+
+            }
+        });
 
         return view;
 
