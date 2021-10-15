@@ -117,7 +117,7 @@ Patient.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() 
                 startActivity(intent);
                 finish();
             }else if(Patient.isChecked()){
-                Intent intent = new Intent(getApplicationContext(),Patient_Dashboard.class);
+                Intent intent = new Intent(getApplicationContext(), Patient_Signup_form.class);
                 intent.putExtra("email", Email);
                 intent.putExtra("pass", Pass);
                 intent.putExtra("conPass", ConPass);

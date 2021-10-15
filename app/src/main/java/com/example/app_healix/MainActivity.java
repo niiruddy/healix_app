@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                 }
                 if(documentSnapshot.getString("isPatient")!=null){
-                    Intent log= new Intent(MainActivity.this, Patient_Dashboard.class);
+                    Intent log= new Intent(MainActivity.this, Patient_Signup_form.class);
                     startActivity(log);
                     finish();
                 }

@@ -131,7 +131,7 @@ public class Nurse_signup_form extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.app_bar);
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(view -> {
-            Intent intent=new Intent(Nurse_signup_form.this, dashboard.class);
+            Intent intent=new Intent(Nurse_signup_form.this, SignUp.class);
             startActivity(intent);
             finish();
         });
